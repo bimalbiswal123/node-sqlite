@@ -12,13 +12,7 @@ def set_options(opt):
 def configure(conf):
   conf.check_tool("compiler_cxx")
   conf.check_tool("node_addon")
-  if not conf.check_cfg(package='sqlite3', args='--cflags --libs', uselib_store='SQLITE3'):
-    if not conf.check(lib="sqlite3", libpath=['/usr/local/lib', '/opt/local/lib'], uselib_store="SQLITE3"):
-      conf.fatal('Missing sqlite3');
-  conf.env.append_value('LIBPATH_SQLITE3', '/opt/local/lib');
-#   conf.check_cfg(package='profiler', args='--cflags --libs', uselib_store='SQLITE3')
-#   conf.env.append_value('LIBPATH_PROFILER', '/usr/local/lib')
-#   conf.env.append_value('LIB_PROFILER', 'profiler')
+  conf.check(lib='sqlite3', libpath=['/lib', '/usr/lib', '/usr/local/lib', '/usr/local/sqlite/lib', '/usr/local/pkg/sqlite-3.7.2/lib'])
 
   conf.env.append_value("LIBPATH_MPOOL", abspath("./deps/mpool-2.1.0/"))
   conf.env.append_value("LIB_MPOOL",     "mpool")
