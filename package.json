@@ -1,7 +1,7 @@
 {
     "name": "pksqlite",
     "description": "SQLite3 bindings for Node",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "homepage": "http://github.com/orlandov/node-sqlite",
     "author": "Orlando Vazquez <ovazquez@gmail.com> (http://2wycked.net)",
     "contributors": [
@@ -17,6 +17,7 @@
     "modules" : {
         "index" : "./sqlite.js"
     },
+    "main" : "./sqlite.js",
     "engines" : { "node" : ">=0.2.0" },
     "scripts" : { "test" : "./run-tests" },
     "licenses" : [
